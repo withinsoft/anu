@@ -1,0 +1,2 @@
+# anu
+A discord bot
