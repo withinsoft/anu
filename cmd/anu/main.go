@@ -104,6 +104,9 @@ func messageCreate(prefix, home string) func(s *discordgo.Session, m *discordgo.
 		env = append(env, "DISCORD_MESSAGE_AUTHOR_NICK="+nick)
 		env = append(env, "I_AM_LISTENING=for a sound beyond sound")
 		env = append(env, "VERB="+userCmd)
+		env = append(env, "PWD="+home)
+		env = append(env, "HOME="+home)
+		env = append(env, "USER="+s.State.User.Username)
 
 		buf := bytes.NewBuffer([]byte(msg))
 		out := bytes.NewBuffer(nil)
@@ -115,6 +118,7 @@ func messageCreate(prefix, home string) func(s *discordgo.Session, m *discordgo.
 		cmd.Stdout = out
 		cmd.Stderr = os.Stderr
 		cmd.Env = env
+		cmd.Dir = home
 
 		var reply string
 		err = cmd.Run()

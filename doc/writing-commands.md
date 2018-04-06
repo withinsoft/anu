@@ -20,3 +20,6 @@ example values:
 | `DISCORD_MESSAGE_AUTHOR_ID`       | Snowflake ID | `72838115944828928`  | The ID of the author of the message being processed.                         |
 | `DISCORD_MESSAGE_AUTHOR_USERNAME` | String       | `Cadey~#1337`        | The Discord username+discriminator for the author of this message.           |
 | `DISCORD_MESSAGE_AUTHOR_NICK`     | String       | `The Smiling Cadey`  | The nickname of this user in this guild.                                     |
+| `USER`                            | String       | `Anu`                | The username of this bot user.                                               |
+| `HOME`                            | String       | `/srv/anu`           | The location of Anu's state/command directory.                               |
+| `VERB`                            | String       | `env`                | The command verb that started this handler.                                  |
